@@ -147,7 +147,16 @@ function showSize(playersName) {
   return foundPlayer.size;
 }
 
-// Build a function, teamColors, that takes in an argument of the team name and returns an array of that teams colors.
+const teamNames = () => {
+  const object = gameObject();
+
+  const teamNamesArry = [];
+  for (const property in object) {
+    teamNamesArry.push(object[property].teamName);
+  }
+
+  return teamNamesArry;
+};
 
 function teamColors(teamName) {
   const object = gameObject();
@@ -157,4 +166,3 @@ function teamColors(teamName) {
     return object.away.colors;
   }
 }
-console.log(teamColors("Brooklyn Nets"));
